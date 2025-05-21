@@ -30,7 +30,7 @@ public class BatchingTimeoutTest {
                 batchingTimeoutTest.produce(client, "producer" + j);
             }, testExecutor);
             futureList.add(future);
-            Thread.sleep(500);
+            Thread.sleep(1000);
         }
 
         futureList.forEach(CompletableFuture::join);
@@ -40,7 +40,7 @@ public class BatchingTimeoutTest {
 
     public void produce(PulsarClient client, String producerName) {
         try {
-            int numMessages = 10;
+            int numMessages = 20;
             Producer<byte[]> producer = client.newProducer()
                     .topic("persistent://public/default/test-batching-timeout")
                     .enableBatching(true)
