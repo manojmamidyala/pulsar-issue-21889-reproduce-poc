@@ -44,8 +44,8 @@ public class BatchingTimeoutTest {
             Producer<byte[]> producer = client.newProducer()
                     .topic("persistent://public/default/test-batching-timeout")
                     .enableBatching(true)
-                    .batchingMaxPublishDelay(1, TimeUnit.MILLISECONDS) // aggressive batching
-                    .sendTimeout(5, TimeUnit.SECONDS)                  // short timeout
+                    .batchingMaxPublishDelay(1, TimeUnit.MILLISECONDS)
+                    .sendTimeout(5, TimeUnit.SECONDS)
                     .blockIfQueueFull(true)
                     .producerName(producerName)
                     .create();
