@@ -36,6 +36,7 @@ public class BatchingTimeoutTest {
         futureList.forEach(CompletableFuture::join);
         client.close();
         log.info("############################## DONE ##############################");
+        System.exit(0);
     }
 
     public void produce(PulsarClient client, String producerName) {
