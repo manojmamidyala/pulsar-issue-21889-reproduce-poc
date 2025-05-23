@@ -47,7 +47,6 @@ public class BatchingTimeoutTest {
                     .enableBatching(true)
                     .batchingMaxPublishDelay(1, TimeUnit.MILLISECONDS)
                     .sendTimeout(5, TimeUnit.SECONDS)
-                    .blockIfQueueFull(true)
                     .producerName(producerName)
                     .create();
 
